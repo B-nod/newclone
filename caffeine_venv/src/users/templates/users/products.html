@@ -1,0 +1,127 @@
+<style>
+    .card-img {
+        overflow: hidden;
+    }
+
+    .card-img:hover img {
+        transform: scale(1.5);
+    }
+
+    .card-img img {
+        transition: all 2s;
+    }
+
+    .form label {
+        display: none;
+    }
+    .form input{
+        border: 2px solid rgb(70, 69, 69);
+        border-radius: 4px;
+        margin-right: 5px;
+        height: 36px;
+        width: 250px;
+    }
+</style>
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>E-commerce - ProductPage</title>
+{% endblock%}
+
+{% block main_content %}
+
+<!-- <div class="container-fluid mt-4 bg-warning">
+    <form action="" class="form" method="GET">
+        {{product_filter.form}}
+        <button class="btn btn-primary" type="submit">
+            Search
+        </button>
+    </form>
+    {% for msg in messages %}
+    {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{ msg }}
+    </div>
+
+    {% endif%}
+
+    {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{ msg }}
+    </div>
+
+    {% endif%}
+
+    {% endfor %} -->
+    <!-- <h2>Category</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mt-5 pb-5">
+        {% for category in category %}
+        <div class="col">
+            <div class="card shadow-lg">
+                <div class="card-img">
+                    <img src="/{{product.image}}" class="card-img-top" alt="{{product.product_name}}" height="250px">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{category.category_name}}</h5>
+                    <h5 class="card-title">Rs. {{product.product_price}}</h5>
+                    <a href="" class="btn btn-success">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div> -->
+
+</div>
+
+<!-- card start -->
+<div class="container-fluid">
+    <div class="d-flex justify-content-between py-3">
+        <h2>Products</h2>
+        <form action="" class="form d-flex align-items-center" method="GET">
+            {{product_filter.form}}
+            <button class="btn btn-primary" type="submit">
+                Search
+            </button>
+        </form> 
+    </div>
+    
+    {% for msg in messages %}
+    {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <div class="alert alert-success">
+        {{ msg }}
+    </div>
+
+    {% endif%}
+
+    {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    <div class="alert alert-danger">
+        {{ msg }}
+    </div>
+
+    {% endif%}
+
+    {% endfor %}
+    <div class="row row-cols-1 row-cols-md-4 g-4 ">
+        {% for product in products%}
+        <div class="col">
+            <div class="card shadow-lg">
+                <div class="card-img">
+                    <img src="/{{product.image}}" class="card-img-top" alt="{{product.product_name}}" height="250px">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{product.product_name}}</h5>
+                    <h5 class="card-title">Rs. {{product.product_price}}</h5>
+                    <a href="/productdetails/{{product.id}}" class="btn btn-success">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<!-- card end -->
+
+
+{% endblock%}

@@ -1,0 +1,106 @@
+<style>
+  .carousel-item img {
+    height: 450px;
+  }
+
+  .card-img {
+    overflow: hidden;
+  }
+
+  .card-img:hover img {
+    transform: scale(1.5);
+  }
+
+  .card-img img {
+    transition: all 2s;
+  }
+
+  .section {
+    background-color: rgb(246, 246, 242);
+  }
+
+  .responsive {
+    width: 75%;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+</style>
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>Caffeinehead - Homepage</title>
+{% endblock%}
+
+{% block main_content %}
+<!-- carousel start -->
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/coffee.jpg' %}" class="d-block w-100" alt="image not found">
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- carousel end -->
+
+<div class="container-fluid">
+  <div class="row d-md-flex justify-content-around p-5 section">
+    <div class="col-sm-6 col-md-6">
+      <img class="responsive" src="{% static 'images/aboutus.jpg'%}" alt="image not found">
+    </div>
+
+    <div class="about-text p-5 col-sm-6 col-md-6">
+      <h3 class="text-sm-start text-md-center">About Us</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, optio. Quos modi animi debitis minus,
+        neque iste suscipit eius facere perferendis, libero, quae temporibus repudiandae dolorem ipsam fugiat minima
+        veritatis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nostrum laborum nemo quisquam, vel nam deleniti
+        totam dolor accusamus, quia voluptatibus unde? Eveniet doloremque quidem aut nulla voluptatum eaque tempora.</p>
+    </div>
+  </div>
+
+  <div class="row d-md-flex justify-content-around p-5">
+    <div class="about-text p-5 col-sm-6 col-md-6">
+      <h3 class="text-sm-start text-md-center">About Us</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, optio. Quos modi animi debitis minus,
+        neque iste suscipit eius facere perferendis, libero, quae temporibus repudiandae dolorem ipsam fugiat minima
+        veritatis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nostrum laborum nemo quisquam, vel nam deleniti
+        totam dolor accusamus, quia voluptatibus unde? Eveniet doloremque quidem aut nulla voluptatum eaque tempora.</p>
+    </div>
+    <div class="col-sm-6 col-md-6">
+      <img class="responsive" src="{% static 'images/aboutus.jpg'%}" alt="image not found">
+    </div>
+
+  </div>
+  <div class="row d-md-flex justify-content-around p-5 section">
+    <div class="col-sm-6 col-md-6">
+      <img class="responsive" src="{% static 'images/aboutus.jpg'%}" alt="image not found">
+    </div>
+
+    <div class="about-text p-5 col-sm-6 col-md-6">
+      <h3 class="text-sm-start text-md-center">About Us</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, optio. Quos modi animi debitis minus,
+        neque iste suscipit eius facere perferendis, libero, quae temporibus repudiandae dolorem ipsam fugiat minima
+        veritatis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nostrum laborum nemo quisquam, vel nam deleniti
+        totam dolor accusamus, quia voluptatibus unde? Eveniet doloremque quidem aut nulla voluptatum eaque tempora.</p>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock%}

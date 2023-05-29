@@ -1,0 +1,120 @@
+<style>
+  .carousel-item img {
+    height: 450px;
+  }
+
+  .card-img {
+    overflow: hidden;
+  }
+
+  .card-img:hover img {
+    transform: scale(1.5);
+  }
+
+  .card-img img {
+    transition: all 2s;
+  }
+
+  .product-card {
+    background-color: rgb(246, 246, 242);
+  }
+  .inner-card{
+    margin: 0 100px;
+  }
+
+  .responsive {
+    width: 75%;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .inner-card{
+      margin: 0 15px;
+    }
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+</style>
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>Caffeinehead - Homepage</title>
+{% endblock%}
+
+{% block main_content %}
+<!-- carousel start -->
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="{% static 'images/coffee4.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'images/coffee.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/coffee1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- carousel end -->
+
+<!-- card start -->
+<div class="container-fluid py-5 product-card">
+  <h2 class="text-center">Our Latest Products</h2>
+  <div class="inner-card row row-cols-1 row-cols-md-4 g-4 mt-3 p-2 ">
+
+    {% for product in products %}
+    <div class="col">
+      <div class="card shadow-lg">
+        <div class="card-img">
+          <img src="/{{product.image}}" class="card-img-top" alt="{{product.product_name}}" height="250px">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{product.product_name}}</h5>
+          <h5 class="card-title">Rs. {{product.product_price}}</h5>
+          <a href="#" class="btn btn-success">View Details</a>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- card end -->
+
+<div class="container-fluid">
+  <div class="row d-md-flex justify-content-around p-5 section">
+    <div class="col-sm-6 col-md-6">
+      <img class="responsive" src="{% static 'images/aboutus.jpg'%}" alt="image not found">
+    </div>
+
+    <div class="about-text p-5 col-sm-6 col-md-6">
+      <h3 class="text-sm-start text-md-center">About Us</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, optio. Quos modi animi debitis minus,
+        neque iste suscipit eius facere perferendis, libero, quae temporibus repudiandae dolorem ipsam fugiat minima
+        veritatis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nostrum laborum nemo quisquam, vel nam deleniti
+        totam dolor accusamus, quia voluptatibus unde? Eveniet doloremque quidem aut nulla voluptatum eaque tempora.</p>
+    </div>
+  </div>
+
+ 
+</div>
+
+
+
+{% endblock%}
